@@ -10,18 +10,26 @@ void getInfo(int & pickFrom, int & numPicks) {
     do {
         cout << "How many balls (1-12) are in the pool to pick from? ";
         cin >> pickFrom;
-        if(pickFrom < 1 or pickFrom > 12){
-            cout << "Input Error! Please enter a number between 1 and 12." << endl;
+        if(pickFrom < 1 || pickFrom > 12){
+            cout << "Input Error! There must be between 1 and 12 balls." << endl;
+
+
+
+
         }
-    }while (pickFrom < 1 or pickFrom > 12);
+    }while (pickFrom < 1 || pickFrom > 12);
 
     do{
         cout << "How many balls (1-7) will be drawn? ";
         cin >> numPicks;
-        if(numPicks < 1 or numPicks > 7){
+        if(numPicks < 1 || numPicks > 7){
             cout << "Input Error!" << endl;
+
+
+
+
         }
-    }while (numPicks < 1 or numPicks > 7);
+    }while (numPicks < 1 || numPicks > 7);
 
 }
 
@@ -39,21 +47,21 @@ void getInfo(int & pickFrom, int & numPicks) {
 // multiplying two factorials together. This is done to prevent any
 // intermediate result becoming so large that it causes overflow.
 double computeWays(int n, int k){
-    double numer = 1.0;
-    double denom = 1.0;
+    double num = 1.0;
+    double den = 1.0;
 
     for(int i=2; i<=n; ++i){
-        numer *= i;
+        num *= i;
     }
 
     for(int i=2; i <= k; ++i){
-        denom *= i;
+        den *= i;
     }
 
     for(int i=2; i<=(n-k); ++i){
-        denom *= i;
+        den *= i;
     }
-    return 1/ (numer/denom);
+    return 1/ (num/den);
 }
 
 // This function computes factorials recursively. It is called by computeWays.
