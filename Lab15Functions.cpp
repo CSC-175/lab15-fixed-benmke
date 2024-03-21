@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 /*******************************************************************
@@ -12,7 +13,8 @@ void getInfo(int & pickFrom, int & numPicks) {
         cin >> pickFrom;
         if(pickFrom < 1 || pickFrom > 12){
             cout << "Input Error! There must be between 1 and 12 balls." << endl;
-
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
 
 
@@ -24,6 +26,8 @@ void getInfo(int & pickFrom, int & numPicks) {
         cin >> numPicks;
         if(numPicks < 1 || numPicks > 7){
             cout << "Input Error!" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
 
 
